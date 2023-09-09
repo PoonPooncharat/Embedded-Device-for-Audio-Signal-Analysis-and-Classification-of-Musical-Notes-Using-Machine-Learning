@@ -1,9 +1,66 @@
 <body>
-    <h1>About Us</h1>
+    <header>
+        <h1>Embedded Device for Audio Signal Analysis and Classification of Musical Notes Using Machine Learning</h1>
+    </header>
+    <section>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Learn HTML</a></li>
+          <li><a href="contact.html">About Us</a></li>
+        </ul>
+      </nav>
+      <h3>About Us</h3>
     <article>
         <h2>Members</h2>
-        <p>
-            Pooncharat Wongkom		    6301012620146
-            Manopas Tanetsakunvatana	6301012630141</p>
+        <p>Pooncharat Wongkom 6301012620146</p>
+        <p>Manopas Tanetsakunvatana	6301012630141</p>
     </article>
+    </section>
+    <footer>
+      <p>Footer</p>
+    </footer>
 </body>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  header {
+    background-color: lightgoldenrodyellow;
+    text-align: center;
+    padding: 2px;
+    font-size: 25px;
+    color: black;
+  }
+  nav {
+    float: left;
+    width: 20%;
+    height: 200px;
+    background: #fff;
+    padding: 10px;
+  }
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  article {
+    font-size: 22;
+    float: left;
+    padding: 30px;
+    width: 80%;
+    background-color: #f1f1f1;
+    height: 300px;
+  }
+  footer {
+    background-color: lightgoldenrodyellow;
+    padding: 10px;
+    text-align: center;
+    color: black;
+  }
+  section::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+</style>
+
