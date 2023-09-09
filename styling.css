@@ -4,3 +4,19 @@ body{
     background: whitesmoke;
     text-align: center;
 }
+    <style>
+        .box {
+        display: flex;
+        height: 200px;
+        }
+        .blue {
+        width:65%;
+        height: 200px;
+        background-color: blue;
+        }
+        .yellow {
+        width: 35%;
+        height: 200px;
+        background-color: yellow;
+        }
+    </style>
