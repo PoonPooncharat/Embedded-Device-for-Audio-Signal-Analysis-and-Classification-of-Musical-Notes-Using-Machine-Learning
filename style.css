@@ -64,15 +64,4 @@ button span{
 .show{
    left: 0;
 }
-.credit{
-    position:fixed;
-    left:40%;
-    bottom:0;
-    color: #000;
-    padding-bottom:5px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-.credit >a{
-    text-decoration: none;
-    color:white
-}
+
