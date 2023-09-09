@@ -1,15 +1,65 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styling.css">
-</head>
 <body>
-    <h1>Embedded Device for Audio Signal Analysis and Classification of Musical Notes Using Machine Learning</h1>
-    <p>In music practice, musicians can’t know that the song they play is correct, like in the note 100 percent or not.
-        So we built a tool that can help them score the playing.
-        For some people who want to play the song they like but can’t transcribe or find the note.
-        This tool can be helped by listening to the song or music to transcribe it ,and convert audio to music notes.</p>
+    <header>
+        <h1>Embedded Device for Audio Signal Analysis and Classification of Musical Notes Using Machine Learning</h1>
+    </header>
+    <section>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Learn HTML</a></li>
+          <li><a href="contact.html">About Us</a></li>
+        </ul>
+      </nav>
+      <article>
+        <h2>Home</h2>
+        <p>In music practice, musicians can’t know that the song they play is correct,
+            like in the note 100 percent or not. So we built a tool that can help them score the playing.
+            For some people who want to play the song they like but can’t transcribe or find the note.
+            This tool can be helped by listening to the song or music to transcribe it ,and convert audio to music notes.</p>
+      </article>
+    </section>
+    <footer>
+      <p>Footer</p>
+    </footer>
 </body>
-</html>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  header {
+    background-color: lightgoldenrodyellow;
+    text-align: center;
+    padding: 2px;
+    font-size: 25px;
+    color: white;
+  }
+  nav {
+    float: left;
+    width: 30%;
+    height: 300px;
+    background: #fff;
+    padding: 20px;
+  }
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  article {
+    float: left;
+    padding: 20px;
+    width: 70%;
+    background-color: #f1f1f1;
+    height: 300px;
+  }
+  footer {
+    background-color: lightgoldenrodyellow;
+    padding: 10px;
+    text-align: center;
+    color: white;
+  }
+  section::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+</style>
