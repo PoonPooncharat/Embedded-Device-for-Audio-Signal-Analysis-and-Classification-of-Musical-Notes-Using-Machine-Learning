@@ -2,7 +2,7 @@
 
 body{
    margin: 0;
-   background: #111;
+
 }
 .sidebar{
    position: fixed;
@@ -10,6 +10,7 @@ body{
    top: 0;
    left: -265px;
    bottom: 0;
+   background: #111;
    padding-top: 50px;
    transition: 0.4s;
    height:85%;
@@ -20,7 +21,7 @@ body{
 .sidebar h1{
    display: block;
    padding: 10px 20px;
-   color: #111;
+   color: #fff;
    text-decoration: none;
    font-family: "Rubik";
    font-weight: 400;
@@ -36,7 +37,7 @@ body{
    letter-spacing: 2px;
 }
 .sidebar a:hover{
-   color: #111;
+   color: #fff;
    margin-left: 20px;
    transition: 0.4s;
 }
@@ -44,6 +45,7 @@ button{
    position: fixed;
    right: 30px;
    top: 30px;
+   background: #111;
    padding: 10px;
    border-radius: 2px;
    outline: none;
@@ -57,7 +59,7 @@ button span{
    width: 20px;
    display: block;
    margin: 6px;
-   background: #111;
+   background: #FFF;
 }
 .show{
    left: 0;
@@ -66,7 +68,7 @@ button span{
     position:fixed;
     left:40%;
     bottom:0;
-    color: #111;
+    color: #000;
     padding-bottom:5px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
