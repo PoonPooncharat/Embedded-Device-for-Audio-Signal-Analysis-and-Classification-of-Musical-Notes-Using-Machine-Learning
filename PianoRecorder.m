@@ -1,20 +1,18 @@
 function PianoRecorder(sound)
-    Fs = 44100; % Sample rate (you can adjust this if needed)
+    Fs = 44100; % Sample rate 
     recorder = audiorecorder(Fs, 16, 1);
 
-    disp('Start recording. Press any key to stop...');
+    disp('Start recording...');
     record(recorder);
     pause;
-
-    % Stop recording
+    
     stop(recorder);
     disp('Recording stopped.');
 
-    % Get the recorded audio data
     audioData = getaudiodata(recorder);
 
-    % Save the recorded audio to a WAV file
-    filename = 'piano_recording.wav'; % Change the filename if needed
+    % Save audio to WAV file
+    filename = 'piano_recording.wav'; 
     audiowrite(filename, audioData, Fs);
 
     % Play the recorded audio
