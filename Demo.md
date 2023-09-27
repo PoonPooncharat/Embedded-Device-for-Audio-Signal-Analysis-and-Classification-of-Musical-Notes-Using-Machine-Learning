@@ -4,8 +4,8 @@
 
 ---
 
-        In music practice, musicians can’t know that the song they play is correct,like in the note 100 percent or not. So we built a tool that can help them score the playing.For some people who want to play the song they like but can’t transcribe or find the note.This tool can be helped by listening to the song or music to transcribe it ,and convert audio to music notes.
-        We use Fast fourier transform (FFT) to screen the sound out to any frequency.By converting input sound from analog to digital, using Analog-to-digital converter (ADC).And the results are displayed with LCD and Web-based Dashboard.
+In music practice, musicians can’t know that the song they play is correct,like in the note 100 percent or not. So we built a tool that can help them score the playing.For some people who want to play the song they like but can’t transcribe or find the note.This tool can be helped by listening to the song or music to transcribe it ,and convert audio to music notes.
+We use Fast fourier transform (FFT) to screen the sound out to any frequency. By converting input sound from analog to digital, using Analog-to-digital converter (ADC).And the results are displayed with LCD and Web-based Dashboard.
 
 # การทำงานในช่วงที่ผ่านมา
 ## การทดลองในช่วงเดือนกรกฎาคม - สิงหาคม
