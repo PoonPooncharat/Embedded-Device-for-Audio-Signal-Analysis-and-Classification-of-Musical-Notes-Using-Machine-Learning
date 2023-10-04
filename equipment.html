@@ -23,7 +23,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   <div class="crossnote markdown-preview  ">
+  <p><a href="index.html" title="↓markdown↓ CMS Home">Home</a> <a href="equipment.html" title="↓markdown↓ CMS Equipments File">Equipments</a>  <a href="https://github.com/PoonPooncharat/Embedded-Device-for-Audio-Signal-Analysis-and-Classification-of-Musical-Notes-Using-Machine-Learning.git" title="GitHub">GitHub</a> <a href="report1and2month.html" title="Report Month 1 and 2 ↓markdown↓ CMS">Report Month 1 and 2</a> <a href="report3.html" title="Report Month 3 ↓markdown↓ CMS">Report Month 3</a></p>
+<h1><font size="5"> Embedded Device for Audio Signal Analysis and Classification of Musical Notes Using Machine Learning Blog Post</font></h1><font size="5">
 
+<p><strong><font size="2">Pooncharat Wongkom, Manopas Tanetsakunvatana.</font></strong></p><font size="2">
+<hr>
+<h1 class="crossnote-header" id="equipments">Equipments</h1>
+
+<h2 class="crossnote-header" id="microphone">Microphone</h2>
+
+<h3 class="crossnote-header" id="1-max9814">1. Max9814</h3>
+
+<p><img src="Image/Max9814.png" alt="Max9814"><br>
+This board uses a power supply voltage of 2.7V to 5.5V and can receive input signals in the range of -40dB to +20dB or has the highest sound sensitivity of 22kHz.<br>
+The advantage of this microphone is that it receives low noise. Makes it possible to receive sound more accurately There is a multi-layer sound filtering system to reduce noise.<br>
+The disadvantage is that the interface is analog and does not directly support digital signals, requiring the use of an ADC that supports a maximum frequency of 22kHz, which may not be suitable for high sounds.</p>
+<h3 class="crossnote-header" id="2-sph0645lm4h">2. SPH0645LM4H</h3>
+
+<p><img src="Image/SPH0645LM4H.png" alt="SPH0645LM4H"><br>
+This board supports I2S or PDM (Pulse-Density Modulation) and supports frequencies up to 65kHz, which allows for high-quality sound.<br>
+The advantage is that there is no need for a preamp or A/D input and because this board uses digital signals. It can greatly reduce noise, but using I2S requires a hardware interface and 2 clock pins.<br>
+The disadvantage is that there is no AGC system, requiring manual adjustment of the gain. There is no additional sound filtering feature built into the device.</p>
+<h3 class="crossnote-header" id="3-inmp441">3. INMP441</h3>
+
+<p><img src="Image/INMP441.png" alt="INMP441"><br>
+This board has a high SNR (SIGNAL TO NOISE RATIO), is sensitive to high sounds and frequencies up to 70kHz, supports I2S.<br>
+The advantage is that the sound can be heard clearly. Has high accuracy in picking up sound.<br>
+The disadvantage is that there is no AGC system, causing the need to adjust the Gain manually. An external circuit must be used for increasing the sound or controlling the sound.</p>
+<h2 class="crossnote-header" id="out-of-all-these-microphones-we-chose-the-inmp441-because-it-can-receive-digital-data-without-the-need-for-adc-and-its-supports-i2s">Out of all these microphones, we chose the INMP441 because it can receive digital data without the need for ADC and its supports I2S.</h2>
+
+</font></font>
   </div>
 
 

@@ -23,30 +23,60 @@
 
 
       <div class="crossnote markdown-preview  ">
-      <h1 class="crossnote-header" id="embedded-device-for-audio-signal-analysis-and-classification-of-musical-notes-using-machine-learning-blog-post">Embedded Device for Audio Signal Analysis and Classification of Musical Notes Using Machine Learning Blog Post</h1>
+      <p><a href="index.html" title="↓markdown↓ CMS Home">Home</a> <a href="equipment.html" title="↓markdown↓ CMS Equipments File">Equipments</a>  <a href="https://github.com/PoonPooncharat/Embedded-Device-for-Audio-Signal-Analysis-and-Classification-of-Musical-Notes-Using-Machine-Learning.git" title="GitHub">GitHub</a> <a href="report1and2month.html" title="Report Month 1 and 2 ↓markdown↓ CMS">Report Month 1 and 2</a> <a href="report3.html" title="Report Month 3 ↓markdown↓ CMS">Report Month 3</a></p>
+<h1><font size="5"> Embedded Device for Audio Signal Analysis and Classification of Musical Notes Using Machine Learning Blog Post</font></h1><font size="5">
 
-<p><strong>Pooncharat Wongkom, Manopas Tanetsakunvatana.</strong></p>
+<p><strong><font size="2"> Pooncharat Wongkom, Manopas Tanetsakunvatana.</font></strong></p><font size="2">
 <hr>
-<h2 class="crossnote-header" id="%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%97%E0%B8%94%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%99%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%87%E0%B9%80%E0%B8%94%E0%B8%B7%E0%B8%AD%E0%B8%99%E0%B8%81%E0%B8%A3%E0%B8%81%E0%B8%8E%E0%B8%B2%E0%B8%84%E0%B8%A1---%E0%B8%AA%E0%B8%B4%E0%B8%87%E0%B8%AB%E0%B8%B2%E0%B8%84%E0%B8%A1">การทดลองในช่วงเดือนกรกฎาคม - สิงหาคม</h2>
+<h2 class="crossnote-header" id="%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%97%E0%B9%8D%E0%B8%B2%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B9%83%E0%B8%99%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%87%E0%B9%80%E0%B8%94%E0%B8%B7%E0%B8%AD%E0%B8%99%E0%B8%81%E0%B8%A3%E0%B8%81%E0%B8%8E%E0%B8%B2%E0%B8%84%E0%B8%A1---%E0%B8%AA%E0%B8%B4%E0%B8%87%E0%B8%AB%E0%B8%B2%E0%B8%84%E0%B8%A1">การทำงานในช่วงเดือนกรกฎาคม - สิงหาคม</h2>
 
-<h3 class="crossnote-header" id="%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%97%E0%B8%94%E0%B8%A5%E0%B8%AD%E0%B8%87">การทดลอง</h3>
+<h2 class="crossnote-header" id="results-of-operations-in-the-past-period">Results of operations in the past period</h2>
 
-<ol>
-<li>ทำการทำลองวัดสัญญาณคลื่นเสียง</li>
-<li>ทำวงจรรวมสัญญาณ 2 คลื่นความถี่ และใช้ FFT ในการจำแนกความถี่</li>
-<li>เขียนโปรแกรมจำลองการรวมคลื่น sine wave และจำแนกความถี่ ด้วย Python และ Matlab</li>
-<li>ทดลองนำอุปกรณ์ เช่น ไมค์โครโฟน มารับค่าสัญญาณ input แล้วจึงนำสัญญาณเหล่านั้นมาแปลงคลื่นความถี่ผ่าน Analog-to-digital converter (ADC)จากนั้นจึงนำสัญญาณเหล่านั้นมาจำแนกความถี่ผ่าน FFT</li>
-<li>ทดลองการใช้ ESP32 ในการสร้าง input sinewave และใช้ ESP32 เป็น ADC ในการแปลงสัญญาณคลื่นเสียง</li>
-</ol>
-<h3 class="crossnote-header" id="%E0%B8%AA%E0%B8%B4%E0%B9%88%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%A8%E0%B8%B6%E0%B8%81%E0%B8%A9%E0%B8%B2">สิ่งที่ได้ศึกษา</h3>
+<h3 class="crossnote-header" id="1-experiment-of-summing-2-inputs-and-1-15v-dc-offset">1. Experiment of summing 2 inputs and 1 1.5V DC offset</h3>
 
-<ol>
-<li>ข้อดีและข้อเสียของไมโครโฟนแต่ละประเภท</li>
-<li>การใช้งาน ESP32 ในการรับสัญญาณเสียงและใช้แทน ADC</li>
-<li></li>
-</ol>
+<p>Working with microcontroller requires voltage that is more than zero, so we set 2 inputs Vpp = 1V, then sum the 2 inputs with 1.5V DC offset.</p>
+<ul>
+<li>Input Frequency 700 Hz with yellow line</li>
+<li>Input Frequency 1400 Hz with light  line</li>
+<li>1.5V DC Offset with pink line</li>
+<li>Output(Inverted) with blue line<br>
+<img src="Image/Results%20of%20operations%20in%20the%20past%20period.png" alt="Results of operations in the past period"></li>
+</ul>
+<h3 class="crossnote-header" id="2-test-the-use-of-various-equipment-and-functions-to-make-sure-they-can-actually-be-used">2. Test the use of various equipment and functions to make sure they can actually be used.</h3>
+
+<p>We use ESP32 as a microprocessor. It has 3 ways to send the audio data.</p>
+<ul>
+<li>
+<p>Bluetooth<br>
+Test sending data via bluetooth by try sending data via Bluetooth from ESP32 to PC and experiment by sending the value i2s_buf which will be a buffer that stores sound sampling data for further processing. There are 16 i2s_buf values in total. From the code :<br>
+<img src="Image/BluetoothCode.png" alt="BluetoothCode"><br>
+Send data i2s_buf and count down 3 seconds, then send data again, repeating indefinitely. Showing Program for receiving data: Bluetooth serial terminal :<br>
+<img src="Image/BluetoothSerialTerminal.png" alt="BluetoothSerialMoniter"><br>
+Whem the Bluetooth connection status is Connected, which means the Bluetooth connection is successful. Show :<br>
+<img src="Image/BluetoothSerialMoniterSuccess.png" alt="BluetoothSerialMoniterSuccess"><br>
+Code example for reading data through INMP441 and I2S protocol :<br>
+<img src="Image/INMP441andI2Sprotocol.png" alt="INMP441andI2Sprotocol.pngs"><br>
+By setting the sample rate = 2000 Hz (experiment with low frequencies first to see if the results are correct according to the input that came in or not).<br>
+Make settings as follows:</p>
+<ul>
+<li>Resolution = 16 bits</li>
+<li>Buffer length = 512<br>
+Read data through I2S MEMS and test results.<br>
+<img src="Image/I2SMEMSandtestresults..png" alt="INMP441andI2Sprotocol"></li>
+<li>The results obtained is to do an exam that Is reading the data 1 time successful or not?</li>
+<li>If successful, bytes_read is displayed, which is the amount of data that can be read.</li>
+<li>i2s_buf[0] is the data in the first buffer of data reading at that time.</li>
+</ul>
+</li>
+<li>
+<p>Connection cable</p>
+</li>
+<li>
+<p>Wifi</p>
+</li>
+</ul>
 <hr>
-
+</font></font>
       </div>
 
 
