@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <li>sample rate = 8000 Hz</li>
 <li>bits_per_sample = 16 bits</li>
 </ul>
-<p><img src="image/dronebotworkshop.png" alt="dronebotworkshop"></p>
+<p><img src="Image/dronebotworkshop.png" alt="dronebotworkshop"></p>
 <p>โดยมีตัวอย่างโค้ดการทำงาน ดังนี้</p>
 <pre data-role="codeBlock" data-info="#include <driver/i2s.h>" class="language-#include #include"><code>// Connections to INMP441 I2S microphone
 #define I2S_WS 25
@@ -125,10 +125,10 @@ if (samples_read &gt; 0) {
 }
 </code></pre><h3 id="ผลลัพธ์การทดลอง">ผลลัพธ์การทดลอง </h3>
 <p>จากนั้นจะได้ผลลัพธ์จากการนำ input 220Hz ผ่าน speaker ของโทรศัพท์มือถือเพื่อทดสอบสัญญาณ โดยใช้คลื่นความถี่เสียงจากคลิป <a href="https://youtu.be/M8Kq3AG9YAY?si=Afpm5l0olBHnZc0c">คลื่นความถี่เสียง A 220Hz</a> โดยจะแสดงออกมาเป็นรูปกราฟ ดังนี้</p>
-<p><img src="image/resultOfI2S.png" alt="resultOfI2S"></p>
+<p><img src="Image/resultOfI2S.png" alt="resultOfI2S"></p>
 <p>ผลลัพธ์จากการนำ input 440Hz ผ่าน speaker มือถือเพื่อทดสอบสัญญาณ โดยใช้คลื่นความถี่เสียงจากคลิป [คลื่นความถี่เสียง A 440Hz] (<a href="https://youtu.be/OUvlamJN3nM?si=fY32C0fwpD0X4YNQ">https://youtu.be/OUvlamJN3nM?si=fY32C0fwpD0X4YNQ</a>)<br>
 โดยจะแสดงออกมาเป็นรูปกราฟ ดังนี้</p>
-<p><img src="image/resultOfI2S_440Hz.png" alt="resultOfI2S_440Hz"></p>
+<p><img src="Image/resultOfI2S_440Hz.png" alt="resultOfI2S_440Hz"></p>
 <h3 id="ข้อสังเกตจาก-output-ของโค้ดของ-dronebotworkshop">ข้อสังเกตจาก output ของโค้ดของ dronebotworkshop </h3>
 <ul>
 <li>output ที่ได้ มาจากค่า mean ของ ค่าใน buffer 8 ตัว ( มาจาก bytesIn = 64 , ทำการ for loop ใน byteIn/8 = 8 ตัว) ทำให้ค่าที่ได้ เป็นค่าจากการรวมกันของข้อมูล ไม่ใช่ค่า ณ เวลานั้นๆ</li>
@@ -141,7 +141,7 @@ if (samples_read &gt; 0) {
 }
 Serial.println("");
 </code></pre><p>ทำให้พบว่า ค่าใน buffer 32 ตัวแรกนั้นสามารถอ่านค่าได้ แต่ค่า 32 ตัวหลังนั้นเป็น 0 ทั้งหมด สาเหตุมาจาก การตั้ง Format ของข้อมูลเป็น <code>I2S_CHANNEL_FMT_ONLY_LEFT</code> , และจากการที่ทำการต่อ pin L/R เข้ากับขา ground ของวงจร ดังรูป</p>
-<p><img src="image/buffer32.png" alt="buffer32"></p>
+<p><img src="Image/buffer32.png" alt="buffer32"></p>
 <p>ทดลองนำโค้ด I2S มาปรับใช้กับงานที่ทำ ดังนี้</p>
 <pre data-role="codeBlock" data-info="" class="language-text text"><code>for(int i=0;i&lt;bytesIn/2;i++){
   Serial.println(sBuffer[i]);
@@ -149,15 +149,15 @@ Serial.println("");
 }
 Serial.println("");
 </code></pre><p>ทำการปริ้นค่าใน buffer ไปจนถึง bytesIn/2 ( ตัด 32 ตัวหลังที่เป็น 0 ออก ) และทำการเปรียบเทียบรูปกราฟคร่าวๆ ระหว่างการใช้ buffer length 64 กับ 1024 โดยมี Input เป็นความถี่ที่ 220Hz ดังรูป<br>
-<img src="image/input220Hz.png" alt="input220Hz"><br>
+<img src="Image/input220Hz.png" alt="input220Hz"><br>
 ทดลอง เพิ่มค่า buffer length เป็น 1024 จะได้ผลลัพธ์ดังนี้<br>
-<img src="image/bufferLength1024.png" alt="bufferLength1024"></p>
+<img src="Image/bufferLength1024.png" alt="bufferLength1024"></p>
 <h2 id="ทดลองการอ่าน-serial-monitor-เพื่อ-save-ข้อมูลไปยัง-text-file">ทดลองการอ่าน Serial monitor เพื่อ save ข้อมูลไปยัง text file </h2>
 <p>โดยมีการใช้โปรแกรม <a href="https://coolterm.en.lo4d.com/windows">Coolterm</a> เพื่อทดสอบ ศึกษาพื้นฐานการใช้งานจาก <a href="https://youtu.be/RWgyCcnUxPY?si=oW6JXrbDiO-7lk05">How to Save Arduino Serial Data in TXT, CSV and Excel File</a></p>
 <p>ตัวอย่างการใช้งาน Coolterm<br>
-<img src="image/exampleOfCoolterm1.png" alt="exampleOfCoolterm1"></p>
+<img src="Image/exampleOfCoolterm1.png" alt="exampleOfCoolterm1"></p>
 <p>ตัวอย่างข้อมูลที่เก็บได้<br>
-<img src="image/exampleOfCoolterm2.png" alt="exampleOfCoolterm2"></p>
+<img src="Image/exampleOfCoolterm2.png" alt="exampleOfCoolterm2"></p>
 <p>ตัวอย่างโค้ด python ที่ใช้ในการ plot ข้อมูลที่ได้</p>
 <pre data-role="codeBlock" data-info="import matplotlib.pyplot as plt" class="language-import import"><code>audio_data = []
 
@@ -211,7 +211,7 @@ plt.annotate(f"({point_time:.4f}, {point_amplitude})", xy=(point_time, point_amp
 plt.show()
 
 </code></pre><p>จะได้ผลกราฟจากการ plot ดังนี้<br>
-<img src="image/audioData.png" alt="audioData"><br>
+<img src="Image/audioData.png" alt="audioData"><br>
 จะเห็นได้ว่า ช่วง peak-peak นั้น มีเวลาต่างกัน 1.0085 - 1.0040 = 0.0045 second ซึ่งเป็นคาบของคลื่นนี้ และทำการหาความถี่จะได้ 1/0.0045 = 222.22 Hz ซึ่งตรงกับ Input ที่ได้ทำการป้อนเข้าไป</p>
 </font></font>
   </div>
