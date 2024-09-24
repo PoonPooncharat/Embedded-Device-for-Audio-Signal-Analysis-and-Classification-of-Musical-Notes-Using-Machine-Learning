@@ -1,0 +1,96 @@
+classdef plotMusicNotes
+    methods
+        
+        function plotG_clefs(obj)
+            figure;
+            hold on;
+            % Parameters
+            num_lines = 5;  % Number of staff lines per staff
+            y_spacing = 1;  % Vertical spacing between staff lines
+            line_length_per_measure = 10;  % Length of each measure
+            num_measures = 4;  % Number of measures in each line
+            total_length = line_length_per_measure * num_measures;  % Total width of the music sheet
+            measure_positions = linspace(0, total_length, num_measures + 1);  % Positions for the barlines
+            staff_spacing = 8;  % Vertical space between all sets of staff lines
+            % Function to draw a single staff with G-clefs and measures
+            
+            function drawStaff(start_y)
+                % Draw staff lines
+                for i = 1:num_lines
+                    plot([0, total_length], [start_y + i * y_spacing, start_y + i * y_spacing], 'k', 'LineWidth', 2);
+                end
+                % Draw vertical barlines to separate measures
+                for i = 2:num_measures  % Start at 2 to avoid drawing a barline at the very start
+                    x_pos = measure_positions(i);
+                    plot([x_pos, x_pos], [start_y + y_spacing * 5.5, start_y + y_spacing * 0.5], 'k', 'LineWidth', 2);  % Vertical barline
+                end
+                % Draw the final barline at the end of the last measure
+                plot([total_length, total_length], [start_y + y_spacing * 5.5, start_y + y_spacing * 0.5], 'k', 'LineWidth', 2);  % Final barline
+                % Load the G-clef image file and convert to truecolor if needed
+                [gclef_img, map, alpha] = imread('C:\Users\Pooncharat Wongkom\Desktop\MusicNote\MusicNote Symbols\G-clefs.png');  % Use correct file path and load the alpha channel
+                if ~isempty(map)  % Check if the image has a colormap
+                    gclef_img = ind2rgb(gclef_img, map);  % Convert indexed image to truecolor RGB
+                end
+                gclef_width = 3;  % Adjust the width of the G-clef
+                gclef_height = 4;  % Adjust the height of the G-clef
+                % Plot the G-clef with transparency applied
+                h = image([0, gclef_width], [start_y + y_spacing * 5.5, start_y + y_spacing * 0.5], gclef_img);  % Position and size of G-clef
+                set(h, 'AlphaData', alpha);  % Ensure transparency is applied from the alpha channel
+            end
+            % Draw the first staff
+            drawStaff(0);
+            drawStaff(-staff_spacing);
+            drawStaff(-2 * staff_spacing);
+            drawStaff(-3 * staff_spacing);
+            drawStaff(-4 * staff_spacing);
+            drawStaff(-5 * staff_spacing);
+            drawStaff(-6 * staff_spacing);
+            drawStaff(-7 * staff_spacing);
+            
+            % Set up the graph
+            axis([0, total_length, -3 * staff_spacing - (num_lines + 2) * y_spacing, (num_lines + 2) * y_spacing]);  % Set axis limits to include all staves
+            axis equal;
+            set(gca, 'XTick', []);  % Hide X-axis ticks
+            set(gca, 'YTick', []);  % Hide Y-axis ticks
+            hold off;
+        end
+
+
+        function plotNote(obj, note_key, start_measure, duration, staff_index)
+            % กำหนดพารามิเตอร์จาก plotG_clefs
+            num_lines = 5; 
+            y_spacing = 1;  
+            line_length_per_measure = 10; 
+            num_measures = 4;  
+            total_length = line_length_per_measure * num_measures; 
+            staff_spacing = 8; 
+
+            note_x = line_length_per_measure * (start_measure - 1) + line_length_per_measure / 2; % กึ่งกลางของ measure 
+            note_y = -staff_spacing * (staff_index - 1); 
+            switch note_key
+                case 'EighthNote'
+                    note_y = note_y + y_spacing * 3; 
+                case 'HalfNote'
+                    note_y = note_y + y_spacing * 2.5;
+                case 'SixteenthNote'
+                    note_y = note_y + y_spacing * 2;
+                %Need to add another music's key
+                otherwise
+                    error('Invalid note key');
+            end
+
+            % Load music note's image (Don't forget to change the file path)
+            note_image_file = ['C:\Users\Pooncharat Wongkom\Desktop\MusicNote\MusicNote Symbols\' note_key '.png']; % ปรับ path ตามต้องการ
+            [note_img, map, alpha] = imread(note_image_file);
+            if ~isempty(map)
+                note_img = ind2rgb(note_img, map); 
+            end
+
+            % Size of music note
+            note_width = 1.5; 
+            note_height = 2;
+            h = image([note_x - note_width/2, note_x + note_width/2], [note_y + note_height/2, note_y - note_height/2], note_img);
+            set(h, 'AlphaData', alpha);
+        end
+    end
+end
